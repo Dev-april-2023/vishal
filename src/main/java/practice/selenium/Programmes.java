@@ -1,5 +1,11 @@
 package practice.selenium;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -11,7 +17,7 @@ import java.util.Set;
 
 public class Programmes {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		//palindromeNumber();
 		//palindromeNumberWithStringBuffer();
 		//palindromeNumberWithStringBuilder();
@@ -24,7 +30,10 @@ public class Programmes {
 		//findMissingNumberInArray();
 		//maxAndMinInArray();
 		//minAndMaxWithoutCollections();
-		duplicateEleInArrayWithoutMap();
+		//duplicateEleInArrayWithoutMap();
+		//convertArrayToArrayList();
+		//writeDataInTextFile();
+		textFileReader();
 		
 		
 		
@@ -249,6 +258,42 @@ public class Programmes {
 	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	//public static void 
 	
+	public static void convertArrayToArrayList() {
+		
+		//int arr1[] = {2,3,6,9,1};
+		String  arr[] = {"Java", "Python","C#"};
+		
+		ArrayList al = new ArrayList(Arrays.asList(arr));
+		Collections.sort(al,Collections.reverseOrder());
+		System.out.println(al);
+		
+	}
 	
+	//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	
+	public static void writeDataInTextFile() throws IOException {
+		
+		FileWriter fw = new FileWriter(".\\datafiles\\Textfile.txt");
+		BufferedWriter bw = new BufferedWriter(fw);
+		
+		bw.write("Testcase name: "+"fail");
+		System.out.println("Data success");
+		bw.close();
+		
+	}
+	
+	//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	
+	public static void textFileReader() throws IOException {
+		
+		FileReader fr = new FileReader(".\\datafiles\\Textfile.txt");
+		BufferedReader br = new BufferedReader(fr);
+		
+		System.out.println(br.readLine());
+		
+		br.close();
+		fr.close();
+	}
+	
+
 }
