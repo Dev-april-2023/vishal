@@ -277,7 +277,7 @@ public class Programmes {
 		BufferedWriter bw = new BufferedWriter(fw);
 		
 		bw.write("Testcase name: "+"fail");
-		System.out.println("Data success");
+		System.out.println("Data success loaded");
 		bw.close();
 		
 	}
